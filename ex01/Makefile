@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
+#    By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 23:42:33 by nechaara          #+#    #+#              #
-#    Updated: 2024/06/23 23:42:44 by nechaara         ###   ########.fr        #
+#    Updated: 2024/07/01 17:25:53 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
 OBJ_DIR = objects
-SRCS = megaphone.cpp
+SRCS = PhoneBook.cpp main.c
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
