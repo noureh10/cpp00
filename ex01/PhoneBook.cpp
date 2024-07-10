@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:24:59 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/08 14:37:10 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:13:42 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,34 +44,27 @@ std::string PhoneBook::inputReader(std::string message) {
 
 void PhoneBook::setContact(void) {
 	std::string input;
+	bool		error;
 	
 	if (_number_of_contacts >= 8)
 		_number_of_contacts = 0;
-	input = inputReader("First Name: ");
-	if (!_phonebook[_number_of_contacts].setName(input)) {
-		errorHandler(ERROR_WRONG_INPUT);
-		return ;
-	}
+	error = false;
+	input = inputReader("\nFirst Name: ");
+	if (!_phonebook[_number_of_contacts].setName(input))
+		error = true;
 	input = inputReader("Last Name: ");
-	if (!_phonebook[_number_of_contacts].setSurname(input)) {
-		errorHandler(ERROR_WRONG_INPUT);
-		return ;
-	}
+	if (!_phonebook[_number_of_contacts].setSurname(input))
+		error = true;
 	input = inputReader("Nickname: ");
-	if (!_phonebook[_number_of_contacts].setNickname(input)) {
-		errorHandler(ERROR_WRONG_INPUT);
-		return ;
-	}
+	if (!_phonebook[_number_of_contacts].setNickname(input))
+		error = true;
 	input = inputReader("Phone number: ");
-	if (!_phonebook[_number_of_contacts].setPhoneNumber(input)) {
-		errorHandler(ERROR_WRONG_INPUT);
-		return ;
-	}
+	if (!_phonebook[_number_of_contacts].setPhoneNumber(input))
+		error = true;
 	input = inputReader("Darkest secret: ");
-	if (!_phonebook[_number_of_contacts].setDarkestSecret(input)) {
-		errorHandler(ERROR_WRONG_INPUT);
-		return ;
-	}
+	if (!_phonebook[_number_of_contacts].setDarkestSecret(input))
+		error = true;
+	if (error) { errorHandler(ERROR_WRONG_INPUT); return ; }
 	std::cout << GREEN << "Contact added to the phonebook" << CRESET << std::endl;
 	this->_number_of_contacts++;
 }
