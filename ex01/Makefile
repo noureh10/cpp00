@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
+#    By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 23:42:33 by nechaara          #+#    #+#              #
-#    Updated: 2024/07/08 14:28:49 by nechaara         ###   ########.fr        #
+#    Updated: 2024/07/10 15:38:30 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	@c++ $(FLAGS) $(OBJS) -o $(NAME)
-	@echo "megaphone created successfully !"
-	@echo "use it this way : ./megaphone (message) "
+	@echo "phonebook created successfully !"
+	@echo "use it this way : ./phonebook "
 	
 
 $(OBJ_DIR)/%.o: %.cpp
