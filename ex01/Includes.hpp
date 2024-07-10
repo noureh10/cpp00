@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Includes.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:24:04 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/01 17:21:18 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/08 14:36:01 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 
+// COLORS
 # define BLACK "\e[0;30m"
 # define RED "\e[0;31m"
 # define GREEN "\e[0;32m"
@@ -24,5 +25,9 @@
 # define CYAN "\e[0;36m"
 # define WHITE "\e[0;37m"
 # define CRESET "\e[0m"
+
+// CODE MACROS
+# define NO_CONTENT " - "
+# define ERROR_WRONG_INPUT "WRONG ARGUMENTS ! ABORTING"
 
 #endif

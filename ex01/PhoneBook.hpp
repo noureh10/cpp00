@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:19:10 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/01 17:19:27 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:55:33 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,19 @@
 class PhoneBook
 {
 	private: 
-		Contact phone_book[8];
+		Contact		_phonebook[8];
+		int			_number_of_contacts;
+		std::string	inputReader(std::string message);
+		std::string	displayLimit(std::string str, unsigned int limit);
+		void		errorHandler(std::string message);
+		
 	public:
 		PhoneBook();
 		~PhoneBook();
 	
-		void	setContact(Contact contact);
-		void	displaySpecificContact(Contact contact);
+		void	setContact(void);
+		void	displaySpecificContact(unsigned int i);
+		void	displayPhonebook(void);
 };
 
 #endif
