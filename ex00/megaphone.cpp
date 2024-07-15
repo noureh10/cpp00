@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:49:42 by nechaara          #+#    #+#             */
-/*   Updated: 2024/06/23 15:17:03 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/15 14:16:00 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	main(int ac, char **av)
 			for (int j = 0; av[i][j]; j++)
 				av[i][j] = toupper(av[i][j]);
 			std::cout << av[i];
-			std::cout << " ";
+			if (!(i + 1 == ac))
+				std::cout << " ";
 		}
 	}
 	else
