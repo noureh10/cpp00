@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:25:55 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/10 17:40:23 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/11 18:24:13 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static bool areStringsEqual(std::string& str1, const std::string& str2) {
 	return str1 == str2;
 }
 
-static void phonebook_search(PhoneBook phone_book, std::string user_input)
-{
+// static void phonebook_search(PhoneBook phone_book, std::string user_input)
+// {
 	
-}
+// }
 
 int main(void)
 {
@@ -48,7 +48,7 @@ int main(void)
 				std::cin >> user_input;
 				if (std::cin.eof())
 					break;
-				phone_book_index = stoi(user_input);
+				phone_book_index = atoi(user_input.c_str());
 				if (phone_book_index >= 0 && phone_book_index < 8)
 				{
 					phone_book.displaySpecificContact((unsigned int) phone_book_index);

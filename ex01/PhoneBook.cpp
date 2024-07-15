@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:24:59 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/10 17:13:42 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/15 14:12:24 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void PhoneBook::setContact(void) {
 	if (!_phonebook[_number_of_contacts].setDarkestSecret(input))
 		error = true;
 	if (error) { errorHandler(ERROR_WRONG_INPUT); return ; }
-	std::cout << GREEN << "Contact added to the phonebook" << CRESET << std::endl;
+	std::cout << GREEN << "\nContact added to the phonebook" << CRESET << std::endl;
 	this->_number_of_contacts++;
 }
 

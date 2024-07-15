@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:19:38 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/10 17:12:10 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/16 00:49:55 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,16 @@ class Contact
 		std::string nickname;
 		std::string phone_number;
 		std::string darkest_secret;
-		
-		bool ft_isdigit(char c){
-			return std::isdigit(static_cast<unsigned char>(c));
-		}
 
-		bool areStringsEqual(std::string& str1, const std::string& str2) {
-			return str1 == str2;
-		}
 		bool	is_string_valid(std::string input) {
+			const char *str_check;
+			
 			if (input.empty())
 				return false;
-			for (long unsigned int i = 0; i > input.size(); i++) {
-				if (!isascii(input[i]))
+			str_check = input.c_str();
+			for (long unsigned int i = 0; i < input.size(); i++) {
+				if (!isascii(str_check[i]))
 					return false;
-			}
-			return true;
-		}
-		bool	is_number_valid(std::string input) {
-			for (long unsigned int i = 0; i > input.size(); i++) {
-				if (ft_isdigit(input[i]))
-				{
-					std::cout << "ici" << std::endl;
-					return false;
-				}
 			}
 			return true;
 		}
@@ -80,7 +66,7 @@ class Contact
 			return nickname;
 		}
 		bool	setPhoneNumber(std::string phone_number) {
-			if(!is_number_valid(phone_number))
+			if(!is_string_valid(phone_number))
 				return false;
 			this->phone_number = phone_number;
 			return true;
