@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:25:55 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/11 18:24:13 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/17 12:09:08 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 static bool areStringsEqual(std::string& str1, const std::string& str2) {
 	return str1 == str2;
 }
-
-// static void phonebook_search(PhoneBook phone_book, std::string user_input)
-// {
-	
-// }
 
 int main(void)
 {
