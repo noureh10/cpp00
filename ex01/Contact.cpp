@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 15:44:22 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/26 16:25:41 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/26 18:07:34 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,9 @@ std::string Contact::getNickname(void) {
 	return _nickname;
 }
 bool	Contact::setPhoneNumber(std::string phone_number) {
-	if(!isStringNumber(phone_number))
+	if(!isStringNumber(phone_number)) {
 		return false;
+	}
 	this->_phone_number = phone_number;
 	return true;
 }
