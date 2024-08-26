@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
+#    By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 23:42:33 by nechaara          #+#    #+#              #
-#    Updated: 2024/07/17 12:04:07 by nechaara         ###   ########.fr        #
+#    Updated: 2024/08/26 17:11:06 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ diff: all
 	@if diff l1 l2; then \
 		echo "Test passed: No differences found."; \
 	else \
-		echo "Test failed: Differences found."; \
+		echo "Test failed: Differences found (might be destructor order)."; \
 	fi
 	@rm l1 l2
 	
