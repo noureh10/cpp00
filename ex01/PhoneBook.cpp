@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:24:59 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/15 14:12:24 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:59:20 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ std::string PhoneBook::inputReader(std::string message) {
 	
 	std::cout << YELLOW << message << CRESET;
 	std::cin >> input;
-	if (std::cin.eof())
-		return "";
+	if (std::cin.eof()) {
+		this->errorHandler("\nProgram interrupted, exiting");
+		exit(EXIT_FAILURE);	
+	}
 	return input;
 }
 
@@ -63,7 +65,6 @@ void PhoneBook::setContact(void) {
 		error = true;
 	input = inputReader("Darkest secret: ");
 	if (!_phonebook[_number_of_contacts].setDarkestSecret(input))
-		error = true;
 	if (error) { errorHandler(ERROR_WRONG_INPUT); return ; }
 	std::cout << GREEN << "\nContact added to the phonebook" << CRESET << std::endl;
 	this->_number_of_contacts++;
@@ -96,9 +97,9 @@ void	PhoneBook::displayPhonebook(void) {
 
 void	PhoneBook::displaySpecificContact(unsigned int i)
 {
-	std::cout << CYAN << "First name :" << this->_phonebook[i].getName() << std::endl;
-	std::cout << CYAN << "Last name :" << this->_phonebook[i].getSurname() << std::endl;
-	std::cout << CYAN << "Nickname :" << this->_phonebook[i].getNickname() << std::endl;
-	std::cout << CYAN << "Phone number :" << this->_phonebook[i].getPhoneNumber() << std::endl;
-	std::cout << CYAN << "Darkest secret :" << this->_phonebook[i].getDarkestSecret() << std::endl;
+	std::cout << CYAN << "First name : " << this->_phonebook[i].getName() << std::endl;
+	std::cout << CYAN << "Last name : " << this->_phonebook[i].getSurname() << std::endl;
+	std::cout << CYAN << "Nickname : " << this->_phonebook[i].getNickname() << std::endl;
+	std::cout << CYAN << "Phone number : " << this->_phonebook[i].getPhoneNumber() << std::endl;
+	std::cout << CYAN << "Darkest secret : " << this->_phonebook[i].getDarkestSecret() << std::endl;
 }

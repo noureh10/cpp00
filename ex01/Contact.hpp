@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:19:38 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/16 00:49:55 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:26:03 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,71 +18,24 @@
 class Contact
 {
 	private:
-		std::string name;
-		std::string surname;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
-
-		bool	is_string_valid(std::string input) {
-			const char *str_check;
-			
-			if (input.empty())
-				return false;
-			str_check = input.c_str();
-			for (long unsigned int i = 0; i < input.size(); i++) {
-				if (!isascii(str_check[i]))
-					return false;
-			}
-			return true;
-		}
-
+		std::string _name;
+		std::string _surname;
+		std::string _nickname;
+		std::string _phone_number;
+		std::string _darkest_secret;
+		bool	isStringValid(std::string input);
+		bool	isStringNumber(std::string input);
 	public:
-		bool	setName(std::string name) {
-			if (!is_string_valid(name))
-				return false;
-			this->name = name;
-			return true;
-		}
-		std::string	getName(void) {
-			return name;
-		}
-		bool	setSurname(std::string surname) {
-			if (!is_string_valid(name))
-				return false;
-			this->surname = surname;
-			return true;
-		}
-		std::string getSurname(void) {
-			return surname;
-		}
-		bool	setNickname(std::string nickname) {
-			if (!is_string_valid(name))
-				return false;
-			this->nickname = nickname;
-			return true;
-		}
-		std::string getNickname(void) {
-			return nickname;
-		}
-		bool	setPhoneNumber(std::string phone_number) {
-			if(!is_string_valid(phone_number))
-				return false;
-			this->phone_number = phone_number;
-			return true;
-		}
-		std::string getPhoneNumber(void) {
-			return phone_number;
-		}
-		bool	setDarkestSecret(std::string darkest_secret) {
-			if (!is_string_valid(darkest_secret))
-				return false;
-			this->darkest_secret = darkest_secret;
-			return true;
-		}
-		std::string getDarkestSecret(void) {
-			return darkest_secret;
-		}
+		bool		setName(std::string name);
+		std::string	getName(void);
+		bool		setSurname(std::string surname);
+		std::string	getSurname(void);
+		bool		setNickname(std::string nickname);
+		std::string	getNickname(void);
+		bool		setPhoneNumber(std::string phone_number);
+		std::string	getPhoneNumber(void);
+		bool		setDarkestSecret(std::string darkest_secret);
+		std::string	getDarkestSecret(void);
 };
 
 #endif

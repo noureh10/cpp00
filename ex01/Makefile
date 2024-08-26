@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
+#    By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/23 23:42:33 by nechaara          #+#    #+#              #
-#    Updated: 2024/07/12 16:53:39 by nechaara         ###   ########.fr        #
+#    Updated: 2024/08/26 17:00:27 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
 OBJ_DIR = objects
-SRCS = PhoneBook.cpp main.cpp
+SRCS = PhoneBook.cpp Contact.cpp main.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
