@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:25:55 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/26 16:56:14 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:41:48 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int main(void)
 	do {
 		search_loop = true;
 		std::cout << BLUE << "\nADD | SEARCH | EXIT\n" << CRESET << std::endl;
-		std::cin >> user_input;
+		getline(std::cin, user_input);
 		if (std::cin.eof()){
 			std::cerr << RED << "Program interrupted, exiting" << CRESET << std::endl;
 			return 1;
